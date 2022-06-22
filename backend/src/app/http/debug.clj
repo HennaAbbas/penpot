@@ -17,6 +17,7 @@
    [app.rpc.commands.binfile :as binf]
    [app.rpc.mutations.files :refer [create-file]]
    [app.rpc.queries.profile :as profile]
+   [app.http.middleware :as hmw]
    [app.util.blob :as blob]
    [app.util.bytes :as bs]
    [app.util.template :as tmpl]

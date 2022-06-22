@@ -17,7 +17,9 @@
    [yetti.adapter :as yt]
    [yetti.middleware :as ymw]
    [yetti.request :as yrq]
-   [yetti.response :as yrs])
+   [yetti.response :as yrs]
+   [promesa.core :as p]
+   [promesa.exec :as px])
   (:import
    com.fasterxml.jackson.core.io.JsonEOFException
    io.undertow.server.RequestTooBigException
@@ -201,6 +203,7 @@
      (fn [handler executor]
        (fn [request respond raise]
          (-> (px/submit! executor #(handler request))
+             (p/bind p/wrap)
              (p/then respond)
              (p/catch raise)))))})
 
