@@ -20,9 +20,9 @@ jobs:
     steps:
       - checkout
       - run: ls -al
-      - run: cd .clj-kondo
-      - run: ls -al
-      - run: cat config.edn
+      - run: cd .clj-kondo && cat config.edn
+      - run: cat .clj-kondo/config.edn
+
 
       # Download and cache dependencies
       - restore_cache:
