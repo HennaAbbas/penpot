@@ -19,7 +19,8 @@ jobs:
 
     steps:
       - checkout
-      - run: cat repo/.clj-kondo/config.edn
+      - run: cd repo/.clj-kondo
+      - run: cat config.edn
 
       # Download and cache dependencies
       - restore_cache:
