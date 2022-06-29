@@ -19,7 +19,8 @@ jobs:
 
     steps:
       - checkout
-      - run: cd repo/.clj-kondo
+      - run: ls -al
+      - run: cd .clj-kondo
       - run: cat config.edn
 
       # Download and cache dependencies
